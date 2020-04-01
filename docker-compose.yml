@@ -1,0 +1,16 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend_docker
+    tty: true
+    ports: 
+      - "8000:8000"
+    volumes:
+      - ./frontend:/frontend
+  backend:
+    build: ./backend_docker
+    ports: 
+      - "8080:8080"
+    tty: true
+    volumes:
+      - ./backend:/backend
